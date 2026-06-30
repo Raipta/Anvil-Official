@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anvil — Free Online PDF, Image & Text Tools</title>
+<meta name="description" content="Free browser-based tools to merge PDFs, compress images, count words and generate QR codes. No uploads, no sign-up — everything runs locally in your browser.">
+<link rel="canonical" href="https://anvil.example.com/index.html">
+<meta property="og:title" content="Anvil — Free Online PDF, Image & Text Tools">
+<meta property="og:description" content="Free browser-based tools to merge PDFs, compress images, count words and generate QR codes. No uploads, no sign-up — everything runs locally in your browser.">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%233b6ef6%22/><path d=%22M5 21h4l2-4h10l3 4h3v2a1.5 1.5 0 0 1-1.5 1.5h-19A1.5 1.5 0 0 1 5 23z%22 fill=%22%23fff%22/><path d=%22M11.5 17v-5a4.5 4.5 0 0 1 4.5-4.5 4.5 4.5 0 0 1 4.5 4.5v1%22 stroke=%22%23fff%22 stroke-width=%222%22 fill=%22none%22 stroke-linecap=%22round%22/><rect x=%2213.5%22 y=%2223.5%22 width=%225%22 height=%224.5%22 rx=%221%22 fill=%22%23fff%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+
+</head>
+<body>
+<div class="bg-orbs"><span></span><span></span><span></span></div>
+<div class="bg-strip"></div>
+<header class="site">
+  <div class="nav-row">
+    <a class="brand" href="index.html"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h4l1.5-3h7l2 3h3"/><path d="M9 14V9a3 3 0 0 1 3-3 3 3 0 0 1 3 3v1"/><rect x="10" y="17" width="4" height="4" rx="1"/></svg></span>Anvil</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="pdf-tools.html" class="">PDF Tools</a>
+      <a href="image-tools.html" class="">Image Tools</a>
+      <a href="text-tools.html" class="">Text Tools</a>
+      <a href="generators.html" class="">Generators</a>
+      <a href="documents.html" class="">Documents</a>
+      <a href="about.html" class="">About</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle dark mode">
+        <svg id="iconSun" style="display:none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Free · Private · No sign-up</span>
+    <h1>File tools that never<br>leave <span class="accent">your browser.</span></h1>
+    <p class="lead">Merge PDFs, compress images, count words, generate QR codes — every tool runs locally on your device. Nothing is uploaded to a server, ever.</p>
+    <div class="hero-cta">
+      <a href="pdf-tools.html" class="btn btn-primary">Browse PDF Tools</a>
+      <a href="image-tools.html" class="btn btn-ghost">Browse Image Tools</a>
+    </div>
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" id="searchInput" placeholder="Search a tool — e.g. 'compress pdf'" oninput="filterTools(this.value)" onkeydown="if(event.key==='Enter'){event.preventDefault(); document.getElementById('tool-grid-anchor').scrollIntoView({behavior:'smooth'});}">
+      <button type="button" onclick="document.getElementById('tool-grid-anchor').scrollIntoView({behavior:'smooth'})">Search</button>
+    </div>
+  </div>
+</section>
+
+<div class="ad-slot"><div class="box">ad space — leaderboard banner</div></div>
+
+<section class="section" id="tool-grid-anchor">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>Everything you need, in five boxes</h2>
+        <p>16 tools across PDF, image, text, generators and documents — more added regularly.</p>
+      </div>
+    </div>
+    <div class="cat-grid">
+
+      <a class="cat-card" data-search href="pdf-tools.html">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
+        <h3>PDF Tools</h3>
+        <p>Merge, split, watermark and compress PDF files directly in your browser.</p>
+        <span class="count">4 tools →</span>
+      </a>
+
+      <a class="cat-card" data-search href="image-tools.html">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>
+        <h3>Image Tools</h3>
+        <p>Compress, resize, convert and remove backgrounds from images.</p>
+        <span class="count">4 tools →</span>
+      </a>
+
+      <a class="cat-card" data-search href="text-tools.html">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg></div>
+        <h3>Text Tools</h3>
+        <p>Word counter, case converter, text comparison and a paraphraser.</p>
+        <span class="count">4 tools →</span>
+      </a>
+
+      <a class="cat-card" data-search href="generators.html">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div>
+        <h3>Generators</h3>
+        <p>QR codes and strong passwords, generated instantly.</p>
+        <span class="count">2 tools →</span>
+      </a>
+
+      <a class="cat-card" data-search href="documents.html">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 17v-6h6v6M9 3v4h6V3M5 21h14a2 2 0 0 0 2-2V7l-5-5H5a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2z"/></svg></div>
+        <h3>Documents</h3>
+        <p>Build a resume or generate an itemised invoice, exported as PDF.</p>
+        <span class="count">2 tools →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>Why Anvil</h2>
+      </div>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card" style="text-align:center;">
+        <div class="icon" style="margin:0 auto 18px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Private by design</h3>
+        <p>Files are processed locally using your browser's own engine — they're never sent anywhere.</p>
+      </div>
+      <div class="cat-card" style="text-align:center;">
+        <div class="icon" style="margin:0 auto 18px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+        <h3>Instant</h3>
+        <p>No upload wait, no queue — processing starts the moment you choose a file.</p>
+      </div>
+      <div class="cat-card" style="text-align:center;">
+        <div class="icon" style="margin:0 auto 18px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>Always free</h3>
+        <p>No sign-up, no subscriptions, no file limits hidden behind a paywall.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="site">
+  <div class="foot-grid">
+    <div>
+      <a class="brand" href="index.html"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h4l1.5-3h7l2 3h3"/><path d="M9 14V9a3 3 0 0 1 3-3 3 3 0 0 1 3 3v1"/><rect x="10" y="17" width="4" height="4" rx="1"/></svg></span>Anvil</a>
+      <p style="font-size:13.5px; color:var(--muted); margin-top:12px; max-width:240px;">Free browser-based PDF, image and text tools. Nothing you upload ever leaves your device.</p>
+    </div>
+    <div>
+      <h4>Tools</h4>
+      <a href="pdf-tools.html">PDF Tools</a>
+      <a href="image-tools.html">Image Tools</a>
+      <a href="text-tools.html">Text Tools</a>
+      <a href="generators.html">Generators</a>
+      <a href="documents.html">Documents</a>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© <span id="year"></span> Anvil. All rights reserved.</span>
+    <span>Built for the open web — no tracking, no sign-up.</span>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="assets/main.js"></script>
+
+</body>
+</html>
